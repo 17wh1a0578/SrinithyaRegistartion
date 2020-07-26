@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container"><br>
+  <h1 class="text-success text-center"> LOGIN PAGE</h1><br>
+    <div class="col-lg-8 m-auto d-block">
+	<form action="#" onsubmit="return validation()"class="bg-light">
+	<div class="form-group">
+	<label> username:</label>
+	<input type="text" name="User" class="form-control" id="user" autocomplete="off">
+	<span id="Username" class="text-danger font-weight-bold"></span>
+	</div>
+	<div class="form-group">
+	<label>password</label>
+	<input type="text" name="password" class="form-control" id="password" autocomplete="off">
+	<span id="pass" class="text-danger font-weight-bold"></span>
+	</div>
+	<div class="form-group">
+	<label>Mobilenumber</label>
+	<input type="text" name="Mobilenumber" class="form-control" id="Mobilenumber" autocomplete="off">
+	<span id="mobilenumber" class="text-danger font-weight-bold"></span>
+	</div>
+	<div class="form-group">
+	<label> Email</label>
+	<input type="text" name="email" class="form-control" id="email" autocomplete="off">
+	<span id="Email" class="text-danger font-weight-bold"></span>
+	</div>
+	<input type="submit" name="submit" value="submit" class="btn-btn-success">
+	</form>
+	</div>
+	</div>
+	
+	
+	<script type="text/javascript">
+	function validation(){
+	    var user = document.getElementById('user').value;
+		var password = document.getElementById('password').value;
+		var Mobilenumber = document.getElementById('Mobilenumber').value;
+		var email = document.getElementById('email').value;
+		
+		if(user==""){
+	    document.getElementById('Username').innerHTML="Please fill the username field";
+		return false;
+		}
+		if((user.length<=2)||(user.length>20)){
+        document.getElementById('Username').innerHTML="Please fill the user length must between 2 and 20";
+	    return false;
+		}
+		if(!isNaN(user)){
+		document.getElementById('Username').innerHTML="Only  characters are allowed";
+	    return false;
+		}
+		if(password==""){
+		document.getElementById('pass').innerHTML="Please fill the password field";
+	    return false;
+		}
+		if((password.length<=5)||(password.length>20)){
+        document.getElementById('pass').innerHTML="Please fill the user length must between 5 and 20";
+	    return false;
+		}  
+		
+		if(Mobilenumber==""){
+		document.getElementById('mobilenumber').innerHTML="Please fill the Mobilenumber field";
+	    return false;
+		}
+		if(isNaN(Mobilenumber)){
+        document.getElementById('mobilenumber').innerHTML="Please fill the Numbers";
+	    return false;
+		}
+		if(Mobilenumber.length!=10){
+        documensst.getElementById('mobilenumber').innerHTML="Please fill the 10 digit number";
+	    return false;
+		}
+		if(email==""){
+		document.getElementById('Email').innerHTML="Please fill the email field";
+	    return false;
+		}
+		if(email.indexOf('@')<=0){
+		document.getElementById('Email').innerHTML="@ is invalid position";
+	    return false;
+		}
+		if((email.charAt(email.length-4)!='.')&&(email.charAt(email.length-3)!='.')){
+		document.getElementById('Email').innerHTML=" . is at Inavalid position";
+	    return false;
+		}
+	}
+	</script>
+	
+</body>
+</html>
